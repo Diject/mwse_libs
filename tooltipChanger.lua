@@ -43,7 +43,7 @@ end
 
 --- @param e uiObjectTooltipEventData
 local function uiObjectTooltipCallback(e)
-    if not e.reference then return end
+    if not e.reference or not e.reference.data then return end
     local tooltip = this.getTooltip(e.reference)
     if tooltip and e.tooltip then
         local nameContainer = e.tooltip:findChild("PartHelpMenu_main")
